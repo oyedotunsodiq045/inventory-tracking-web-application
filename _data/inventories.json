@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "5d7a514b5d2c12c7449be042",
+    "itemCode": "SP001",
+    "itemName": "Truck Tire",
+    "price": 400,
+    "unit": 20,
+    "totalStockValue": 8000
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be043",
+    "itemCode": "SP002",
+    "itemName": "Small Car Tire",
+    "price": 250,
+    "unit": 30,
+    "totalStockValue": 7500
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be044",
+    "itemCode": "SP003",
+    "itemName": "Back Light",
+    "price": 50,
+    "unit": 15,
+    "totalStockValue": 750
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be045",
+    "itemCode": "SP004",
+    "itemName": "Front Light",
+    "price": 70,
+    "unit": 18,
+    "totalStockValue": 1260
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be046",
+    "itemCode": "SP005",
+    "itemName": "Door Handle",
+    "price": 20,
+    "unit": 7,
+    "totalStockValue": 140
+  }
+]
