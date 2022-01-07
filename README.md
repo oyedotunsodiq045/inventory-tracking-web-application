@@ -26,19 +26,22 @@ node seeder -d
 
 ### Testing
 
-| Routes                                                                                                    | Description                  |
-| --------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| Inventory                                                                                                 |                              |
-| POST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories                                     | Create Inventory             |
-| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories                               | Get All Inventories          |
-| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/quesinventoriestions/:id                  | Get Single Inventory         |
-| PUT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/quesinventoriestions/:id                  | Update an Inventory          |
-| DELETE &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/quesinventoriestions/:id                                    | Delete an Inventory          |
-| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/export                        | Export All Inventories       |
-| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/quesinventoriestions/:id/export           | Export an Inventory          |
-|                                                                                                           |                              |
-| Advanced Filtering                                                                                        |                              |
-|                                                                                                           |                              |
-| Select, Sorting                                                                                           |                              |
-|                                                                                                           |                              |
-| Pagination                                                                                                |                              |
+| Routes                                                                                           | Description                  |
+| ------------------------------------------------------------------------------------------------ | ---------------------------- |
+| Inventory                                                                                        |                              |
+| POST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories                            | Create Inventory             |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories                      | Get All Inventories          |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/:id                  | Get Single Inventory         |
+| PUT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/:id                  | Update an Inventory          |
+| DELETE &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/:id                                    | Delete an Inventory          |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/export               | Export All Inventories       |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/:id/export           | Export an Inventory          |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/month                | Get this month Inventory     |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/week                 | Get this week Inventory      |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/today                | Get today's Inventory         |
+|                                                                                                  |                              |
+| Advanced Filtering                                                                               |                              |
+|                                                                                                  |                              |
+| Select, Sorting                                                                                  |                              |
+|                                                                                                  |                              |
+| Pagination                                                                                       |                              |

@@ -1,14 +1,116 @@
-// https://www.tabnine.com/code/javascript/functions/json2csv/json2csv
 const { Parser } = require('json2csv')
 const ErrorResponse = require('../utils/errorResponse')
 const asyncHandler = require('../middleware/async')
 const Inventory = require('../models/Inventory')
 require('colors')
+const moment = require('moment')
 // const { clearKey } = require('../middleware/cache')
+
+// @desc    Get all Inventories created this month
+// @route   GET /api/v1/inventories/month
+// @access  Public
+// @resource https://momentjscom.readthedocs.io/en/latest/moment/03-manipulating/03-start-of/
+exports.getInventoriesCreatedThisMonth = asyncHandler(
+  async (req, res, next) => {
+    let start = moment().startOf('month') // set to the first of this month, 12:00 am
+    let end = moment().endOf('month') // set to the last day of this month, 23:59 pm
+
+    const inventories = await Inventory.find({
+      createdAt: {
+        $gte: start,
+        $lt: end,
+      },
+    })
+
+    // const inventories = await Inventory.find({
+    //   createdAt: {
+    //     $gte: start,
+    //     $lt: end,
+    //   },
+    // }).cache({
+    //   time: 10,
+    // })
+
+    res.status(200).json({
+      success: true,
+      count: inventories.length,
+      data: inventories,
+    })
+  }
+)
+
+// @desc    Get all Inventories created this week
+// @route   GET /api/v1/inventories/week
+// @access  Public
+exports.getInventoriesCreatedThisWeek = asyncHandler(async (req, res, next) => {
+  let start = moment().startOf('week') // set to the first day of this week, 12:00 am
+  let end = moment().endOf('week') // set to the last day of this week, 23:59 pm
+
+  const inventories = await Inventory.find({
+    createdAt: {
+      $gte: start,
+      $lt: end,
+    },
+  })
+
+  // const inventories = await Inventory.find({
+  //   createdAt: {
+  //     $gte: start,
+  //     $lt: end,
+  //   },
+  // }).cache({
+  //   time: 10,
+  // })
+
+  res.status(200).json({
+    success: true,
+    count: inventories.length,
+    data: inventories,
+  })
+})
+
+// @desc    Get all Inventories created today
+// @route   GET /api/v1/inventories/today
+// @access  Public
+exports.getInventoriesCreatedToday = asyncHandler(async (req, res, next) => {
+  // Using Mongoose
+  // let start = new Date();
+  // start.setHours(0,0,0,0);
+
+  // let end = new Date();
+  // end.setHours(23,59,59,999);
+
+  // Using Moment
+  let start = moment().startOf('day') // set to 12:00 am today
+  let end = moment().endOf('day') // set to 23:59 pm today
+
+  const inventories = await Inventory.find({
+    createdAt: {
+      $gte: start,
+      $lt: end,
+    },
+  })
+
+  // const inventories = await Inventory.find({
+  //   createdAt: {
+  //     $gte: start,
+  //     $lt: end,
+  //   },
+  // }).cache({
+  //   time: 10,
+  // })
+
+  res.status(200).json({
+    success: true,
+    count: inventories.length,
+    data: inventories,
+  })
+})
 
 // @desc    Export all Inventories
 // @route   Export /api/v1/inventories/export
 // @access  Public
+// @resource // https://www.tabnine.com/code/javascript/functions/json2csv/json2csv
 exports.exportInventories = asyncHandler(async (req, res, next) => {
   const inventories = await Inventory.find()
   var filename = ['Inventories-', Date.now()].join('')

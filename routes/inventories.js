@@ -1,5 +1,8 @@
 const express = require('express')
 const {
+  getInventoriesCreatedThisMonth,
+  getInventoriesCreatedThisWeek,
+  getInventoriesCreatedToday,
   exportInventories,
   getInventories,
   exportInventory,
@@ -14,6 +17,10 @@ const router = express.Router()
 router.route('/').get(getInventories).post(createInventory)
 
 router.route('/export').get(exportInventories)
+
+router.route('/month').get(getInventoriesCreatedThisMonth)
+router.route('/week').get(getInventoriesCreatedThisWeek)
+router.route('/today').get(getInventoriesCreatedToday)
 
 router
   .route('/:id')
