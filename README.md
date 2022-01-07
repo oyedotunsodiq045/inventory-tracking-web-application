@@ -11,10 +11,10 @@ npm i
 # Install dev-dependencies
 npm i -D nodemon
 
-# Serve on localhost:7000 (development)
+# Serve on localhost:5000 (development)
 npm run dev
 
-# Serve on localhost:7000 (production)
+# Serve on localhost:5000 (production)
 npm start
 
 # Import sample data into mongodb
