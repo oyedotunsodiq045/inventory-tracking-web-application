@@ -24,6 +24,12 @@ node seeder -i
 node seeder -d
 ```
 
+### Instruction
+
+| Note                                                                                 |
+| ------------------------------------------------------------------------------------ |
+| url &nbsp; &nbsp; &nbsp; &nbsp; https://shopify-itwa.herokuapp.com                   |
+|                                                                                      |
 ### Testing
 
 | Routes                                                                                           | Description                  |
