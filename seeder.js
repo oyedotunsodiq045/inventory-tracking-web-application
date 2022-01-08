@@ -12,8 +12,8 @@ dotenv.config({
 const Inventory = require('./models/Inventory')
 
 // Connect to DB
-// mongoose.connect(process.env.MONGO_URI, {
-mongoose.connect(process.env.LOCAL_MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI, {
+  // mongoose.connect(process.env.LOCAL_MONGO_URI, {
   useNewUrlParser: true,
   // useCreateIndex: true,
   // useFindAndModify: false,
