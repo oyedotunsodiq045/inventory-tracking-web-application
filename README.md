@@ -26,10 +26,11 @@ node seeder -d
 
 ### Instruction
 
-| Note                                                                                 |
-| ------------------------------------------------------------------------------------ |
-| url &nbsp; &nbsp; &nbsp; &nbsp; https://shopify-itwa.herokuapp.com                   |
-|                                                                                      |
+| Note                                                                                                    |
+| ------------------------------------------------------------------------------------------------------- |
+| url &nbsp; &nbsp; &nbsp; &nbsp; https://shopify-itwa.herokuapp.com                                      |
+| url &nbsp; &nbsp; &nbsp; &nbsp; https://inventory-tracking-web-application.glitch.me/                   |
+|                                                                                                         |
 ### Testing
 
 | Routes                                                                                           | Description                  |
