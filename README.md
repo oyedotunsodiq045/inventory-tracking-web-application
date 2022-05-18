@@ -45,7 +45,7 @@ node seeder -d
 | GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/:id/export           | Export an Inventory          |
 | GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/month                | Get this month Inventory     |
 | GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/week                 | Get this week Inventory      |
-| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/today                | Get today's Inventory         |
+| GET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url/api/v1/inventories/today                | Get today's Inventory        |
 |                                                                                                  |                              |
 | Advanced Filtering                                                                               |                              |
 |                                                                                                  |                              |

@@ -4,6 +4,8 @@ const asyncHandler = require('../middleware/async')
 const Inventory = require('../models/Inventory')
 require('colors')
 const moment = require('moment')
+const weather = require('openweather-apis')
+weather.setLang('en')
 // const { clearKey } = require('../middleware/cache')
 
 // @desc    Get all Inventories created this month
@@ -226,7 +228,46 @@ exports.getInventory = asyncHandler(async (req, res, next) => {
 // @route   POST /api/v1/inventories
 // @access  Public
 exports.createInventory = asyncHandler(async (req, res, next) => {
-  const inventory = await Inventory.create(req.body)
+  let ItemCityWeatherDescription, inventory
+  // get ItemCityWeatherDescription
+  function getItemCityWeatherDescription() {
+    setTimeout(() => {
+      // set city by name
+      weather.setCity(req.body.itemCity)
+      // check http://openweathermap.org/appid#get for get the APPID
+      weather.setAPPID(process.env.OPEN_WEATHER_APPID)
+      // get a simple JSON Object with temperature, humidity, pressure and description
+      weather.getSmartJSON(async function getICWD(err, smart) {
+        // console.log(smart)
+        ItemCityWeatherDescription = smart.description
+        // return ItemCityWeatherDescription
+      })
+    }, 1000)
+  }
+  // create inventory
+  function createInventory() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        req.body.itemCityCurrentWeatherDescription = ItemCityWeatherDescription
+        console.log(req.body)
+        inventory = Inventory.create(req.body)
+
+        const error = false
+
+        if (!error) {
+          resolve()
+        } else {
+          reject('Error: Something went wrong!')
+        }
+      }, 2000)
+    })
+  }
+
+  async function init() {
+    await getItemCityWeatherDescription()
+    createInventory()
+  }
+  init()
 
   res.status(201).json({
     success: true,
