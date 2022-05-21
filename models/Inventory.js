@@ -10,7 +10,18 @@ const InventorySchema = new Schema(
     sequence: { type: Number },
     itemCode: { type: String, required: true },
     itemName: { type: String, required: true },
-    itemCity: { type: String, required: true },
+    itemCity: {
+      type: String,
+      required: true,
+      enum: [
+        'San Francisco',
+        'New York City',
+        'Los Angeles',
+        'Seattle',
+        'Ottawa',
+      ],
+      default: 'San Francisco',
+    }, // five possible cities only
     itemCityCurrentWeatherDescription: String,
     price: { type: Number, required: true },
     unit: { type: Number, required: true },
