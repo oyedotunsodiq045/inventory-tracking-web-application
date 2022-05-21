@@ -28,6 +28,7 @@ node seeder -d
 
 | Note                                                                                                    |
 | ------------------------------------------------------------------------------------------------------- |
+| url &nbsp; &nbsp; &nbsp; &nbsp; https://inventory-tracking-web-application.oyedotunsodiq.repl.co        |
 | url &nbsp; &nbsp; &nbsp; &nbsp; https://shopify-itwa.herokuapp.com                                      |
 | url &nbsp; &nbsp; &nbsp; &nbsp; https://inventory-tracking-web-application.glitch.me/                   |
 |                                                                                                         |
