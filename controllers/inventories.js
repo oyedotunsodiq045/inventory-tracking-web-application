@@ -116,29 +116,47 @@ exports.getInventoriesCreatedToday = asyncHandler(async (req, res, next) => {
 exports.exportInventories = asyncHandler(async (req, res, next) => {
   const inventories = await Inventory.find()
   var filename = ['Inventories-', Date.now()].join('')
-  var fields = [
-    '_id',
-    'itemCode',
-    'itemName',
-    'itemCity',
-    'itemCityCurrentWeatherDescription',
-    'price',
-    'unit',
-    'totalStockValue',
-    'createdAt',
-    'updatedAt',
-  ]
-  var fieldNames = [
-    '#',
-    'Item Code',
-    'Item Name',
-    'Item City',
-    'Current Weather',
-    'Price/Unit ($)',
-    'Units',
-    'Total Stock Values ($)',
-    'Created At',
-    'Updated At',
+  const fields = [
+    {
+      label: '#',
+      value: '_id',
+    },
+    {
+      label: 'Item Code',
+      value: 'itemCode',
+    },
+    {
+      label: 'Item Name',
+      value: 'itemName',
+    },
+    {
+      label: 'Item City',
+      value: 'itemCity',
+    },
+    {
+      label: 'Current Weather',
+      value: 'itemCityCurrentWeatherDescription',
+    },
+    {
+      label: 'Price/Unit ($)',
+      value: 'price',
+    },
+    {
+      label: 'Units',
+      value: 'unit',
+    },
+    {
+      label: 'Total Stock Values ($)',
+      value: 'totalStockValue',
+    },
+    {
+      label: 'Created At',
+      value: 'createdAt',
+    },
+    {
+      label: 'Updated At',
+      value: 'updatedAt',
+    },
   ]
   const json2csvParser = new Parser({ fields })
   const csv = json2csvParser.parse(inventories)
@@ -177,29 +195,47 @@ exports.exportInventory = asyncHandler(async (req, res, next) => {
     )
   }
   var filename = ['Inventory-', Date.now()].join('')
-  var fields = [
-    '_id',
-    'itemCode',
-    'itemName',
-    'itemCity',
-    'itemCityCurrentWeatherDescription',
-    'price',
-    'unit',
-    'totalStockValue',
-    'createdAt',
-    'updatedAt',
-  ]
-  var fieldNames = [
-    '#',
-    'Item Code',
-    'Item Name',
-    'Item City',
-    'Current Weather',
-    'Price/Unit ($)',
-    'Units',
-    'Total Stock Values ($)',
-    'Created At',
-    'Updated At',
+  const fields = [
+    {
+      label: '#',
+      value: '_id',
+    },
+    {
+      label: 'Item Code',
+      value: 'itemCode',
+    },
+    {
+      label: 'Item Name',
+      value: 'itemName',
+    },
+    {
+      label: 'Item City',
+      value: 'itemCity',
+    },
+    {
+      label: 'Current Weather',
+      value: 'itemCityCurrentWeatherDescription',
+    },
+    {
+      label: 'Price/Unit ($)',
+      value: 'price',
+    },
+    {
+      label: 'Units',
+      value: 'unit',
+    },
+    {
+      label: 'Total Stock Values ($)',
+      value: 'totalStockValue',
+    },
+    {
+      label: 'Created At',
+      value: 'createdAt',
+    },
+    {
+      label: 'Updated At',
+      value: 'updatedAt',
+    },
   ]
 
   const json2csvParser = new Parser({ fields })
